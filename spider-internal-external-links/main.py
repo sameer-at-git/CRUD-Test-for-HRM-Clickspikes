@@ -1,8 +1,13 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+from dotenv import load_dotenv
 import pandas as pd
 from urllib.parse import urljoin, urlparse
-import time
+import time, os
+
+load_dotenv()
+EMAIL = os.getenv("HRM_EMAIL")
+PASSWORD = os.getenv("HRM_PASSWORD")
 
 driver = webdriver.Chrome()
 base_url = 'https://bxvfe.hrm.clickspikes.com/login'
@@ -13,8 +18,8 @@ email_input = driver.find_element(By.NAME, 'email')
 password_input = driver.find_element(By.NAME, 'password')
 login_button = driver.find_element(By.XPATH, "//button[@type='submit']")
 
-email_input.send_keys('mdsameersayed0@gmail.com')
-password_input.send_keys('Sam12#eer')
+email_input.send_keys(EMAIL)
+password_input.send_keys(PASSWORD)
 login_button.click()
 time.sleep(5)
 
@@ -31,9 +36,8 @@ for el in elements:
         else:
             external_links.add(full_link)
 
-df_internal = pd.DataFrame(list(internal_links), columns=['Internal Link'])
-df_external = pd.DataFrame(list(external_links), columns=['External Link'])
-df_internal.to_csv('links/internal_links.csv', index=False)
-df_external.to_csv('links/external_links.csv', index=False)
+os.makedirs('links', exist_ok=True)
+pd.DataFrame(list(internal_links), columns=['Internal Link']).to_csv('links/internal_links.csv', index=False)
+pd.DataFrame(list(external_links), columns=['External Link']).to_csv('links/external_links.csv', index=False)
 
 driver.quit()
