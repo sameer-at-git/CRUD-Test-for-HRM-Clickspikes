@@ -3,16 +3,9 @@ plans- only add subscribe
 change-language/es  -change language to espanyol
 dashboard -navigate to each page
 report/leave -nothing to do 
-change-language/pl -change language to polish
-change-language/tr -change language to turkish
 print-setting -setup print settings
 logout -logs out
 employee -cant create with filling form and with importing
-change-language/ru -change language to russian
-change-language/it -change language to italian
-change-language/de -change language to german
-leave -cant create leave request since no emp
-change-language/zh -change language to chinese
 report/income -expense download,search,reset
 report/timesheet -timesheet download,export,search,reset
 profile -edit 2 diff 
@@ -21,21 +14,12 @@ report/monthly/attendance -get/view
 attendanceemployee/bulkattendance -get/view and update
 timesheet -cant create with filling form and with importing
 taxes -crud set   of 4
-change-language/pt-br -change language to portugese/brazillian
-change-language/ja -change language to japan
 chats -msg ,reply
 payslip -3 actions
 home - same as dashboard
 setsalary  -cant do anything since no emp
-change-language/ar -change language to arabic
 dashboard#!  - same as dashboard
-change-language/he -change language to arabic
-change-language/da -change language to danish
 report/payroll -get/view
 features -select features and their permissions
-change-language/fr  -change language to french
-change-language/en  -change language to english
 attendanceemployee  -get/view
-change-language/nl  -change language to dutch
-change-language/pt  -change language to portugese
 report/account-statement -get/view
